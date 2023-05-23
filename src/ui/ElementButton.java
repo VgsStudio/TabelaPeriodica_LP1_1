@@ -33,7 +33,7 @@ public class ElementButton extends JButton {
         JLabel numberLabel = new JLabel(String.valueOf(element.getAtomicNumber()));
         numberLabel.setFont(new Font("Arial", Font.PLAIN, screenSize.width/150));
         numberLabel.setVerticalAlignment(JLabel.TOP);
-        numberLabel.setHorizontalAlignment(JLabel.LEFT);
+        numberLabel.setHorizontablAlignment(JLabel.LEFT);
 
         JLabel symbolLabel = new JLabel(element.getSymbol());
         symbolLabel.setFont(new Font("Arial", Font.BOLD, screenSize.width/100));
