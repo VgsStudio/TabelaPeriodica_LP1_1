@@ -33,3 +33,4 @@ bin/
 *.iml
 *.ipr
 /.idea/
+/src/META-INF/
