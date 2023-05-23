@@ -1,6 +1,5 @@
 package main.ui.more_Info;
 import main.element.Element;
-import main.element.ElmentTest;
 
 import javax.swing.*;
 
@@ -14,7 +13,7 @@ public class PopUpScreen extends JFrame implements ActionListener {
     
 
 
-    public PopUpScreen(){
+    public PopUpScreen(Element element){
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(500,500);
         setVisible(true);
@@ -31,16 +30,6 @@ public class PopUpScreen extends JFrame implements ActionListener {
 
         int atomicNumber = 1, protonNum = 1 , atomicMass = 1;
 
-        Element element = new Element(
-            1,
-            "Hidrogênio",
-            "H",
-            0,
-            1,
-            "gases nobres",
-            "1766"
-        );
-        
         GridBagConstraints c = new GridBagConstraints();
         GridBagConstraints d = new GridBagConstraints();
         d.anchor = GridBagConstraints.FIRST_LINE_START;
