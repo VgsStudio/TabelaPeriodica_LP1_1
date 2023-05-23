@@ -1,3 +1,4 @@
+package tests;
 import ui.PeriodicTableScreen;
 
 public class Main {
