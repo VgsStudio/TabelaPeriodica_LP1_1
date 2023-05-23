@@ -1,4 +1,4 @@
-package main.ui;
+package main.ui.more_Info;
 import main.element.ElmentTest;
 
 import javax.swing.*;

@@ -1,6 +1,6 @@
 package tests;
 
-import main.ui.PopUpScreen;
+import main.ui.more_Info.PopUpScreen;
 
 
 public class TestPopUpScreen {
