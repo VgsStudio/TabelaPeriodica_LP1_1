@@ -1,30 +1,25 @@
 package main.element;
 
 public class Element {
-    private int atomicNumber;
-    private String name;
-    private String symbol;
-    private String color;
+    private int atomicNumber, neutronNumber, atomicMass;
+    private String name, symbol, color;
 
-    public Element(int atomicNumber, String elementName, String elementSymbol) {
+    private String family;
+    private String year;
+
+    public Element(int atomicNumber, String name, String symbol, int neutronNumber, int atomicMass, String family, String year) {
         this.atomicNumber = atomicNumber;
-        this.name = elementName;
-        this.symbol = elementSymbol;
+        this.name = name;
+        this.symbol = symbol;
+        this.neutronNumber = neutronNumber;
+        this.atomicMass = atomicMass;
+        this.family = family;
+        this.year = year;
 
-        // generate a random int number between 0 e 9
-        int random = (int) (Math.random() * 10);
-
-        switch (random) {
-            case 0 -> this.color = "#ffaa01";
-            case 1 -> this.color = "#f3f300";
-            case 2 -> this.color = "#dd999a";
-            case 3 -> this.color = "#ffab89";
-            case 4 -> this.color = "#ddaacb";
-            case 5 -> this.color = "#99bbaa";
-            case 6 -> this.color = "#55cc88";
-            case 7 -> this.color = "#00ef00";
-            case 8 -> this.color = "#00ddba";
-            case 9 -> this.color = "#66aaff";
+        switch (family) {
+            case "alcalinos" -> this.color = "#ffaa01";
+            case "gases nobres" -> this.color = "#f3f300";
+            case "alcalinos terrosos" -> this.color = "#dd999a";
         }
     }
 
@@ -42,5 +37,17 @@ public class Element {
 
     public String getColor() {
         return color;
+    }
+
+    public int getAtomicMass() {
+        return atomicMass;
+    }
+
+    public String getFamily() {
+        return family;
+    }
+
+    public String getYear() {
+        return year;
     }
 }

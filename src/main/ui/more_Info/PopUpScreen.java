@@ -1,4 +1,5 @@
 package main.ui.more_Info;
+import main.element.Element;
 import main.element.ElmentTest;
 
 import javax.swing.*;
@@ -27,10 +28,18 @@ public class PopUpScreen extends JFrame implements ActionListener {
         panel3 = new JPanel(new GridLayout(0,1)), 
         panel4 =  new JPanel(new GridLayout(0,1));
 
-        String name = "Hidrogenio", family = "Hidrogenio " ,year = "Sla", icon = "H";
+
         int atomicNumber = 1, protonNum = 1 , atomicMass = 1;
-        ElmentTest hidro = new ElmentTest(name, family, atomicNumber, protonNum, atomicMass, year,icon);
-        
+
+        Element element = new Element(
+            1,
+            "Hidrogênio",
+            "H",
+            0,
+            1,
+            "gases nobres",
+            "1766"
+        );
         
         GridBagConstraints c = new GridBagConstraints();
         GridBagConstraints d = new GridBagConstraints();
@@ -46,38 +55,38 @@ public class PopUpScreen extends JFrame implements ActionListener {
         c.weighty = 0.1;
         c.gridx  = 0;
         c.gridy = 0;
-        panel2.add(createLabel(hidro.getIcon(), 100, 100,new Color(0x359EEE)),d);
+        panel2.add(createLabel(element.getSymbol(), 100, 100,new Color(0x359EEE)),d);
         atomStuff.add(panel2, c);
         
         c.anchor = GridBagConstraints.PAGE_START;
         c.gridx = 1;
         c.gridy = 0;
-        panel3.add(createLabel(hidro.getName(), 100, 30, new Color(0x000800)));
+        panel3.add(createLabel(element.getName(), 100, 30, new Color(0x000800)));
         atomStuff.add(panel3, c);
 
         
         c.anchor = GridBagConstraints.FIRST_LINE_END;
         c.gridx = 2;
         c.gridy = 0;
-        panel1.add(createLabel(""+hidro.getAtomicNumber(),100 ,100,new Color(0x800DBD)),d);
+        panel1.add(createLabel(""+element.getAtomicNumber(),100 ,100,new Color(0x800DBD)),d);
         atomStuff.add(panel1, c);
 
         c.anchor= GridBagConstraints.PAGE_START;
         c.gridx = 1;
         c.gridy = 1;
-        panel3.add(createLabel(hidro.getFamily(), 100, 100,new Color(0x00DEAD)),d);
+        panel3.add(createLabel(element.getFamily(), 100, 100,new Color(0x00DEAD)),d);
         atomStuff.add(panel3, c);
         
 
         c.anchor = GridBagConstraints.LINE_START;
         c.gridx = 0;
         c.gridy = 2;
-        panel4.add(createLabel(""+hidro.getAtomicMass(), 100, 30,new Color(0x00FEAD)),d);
+        panel4.add(createLabel(""+element.getAtomicMass(), 100, 30,new Color(0x00FEAD)),d);
         atomStuff.add(panel4, c);
  
         c.gridx = 0;
         c.gridy = 3;
-        atomStuff.add(createLabel(hidro.getYear(), 100, 30,new Color(0x00FEED)), c);
+        atomStuff.add(createLabel(element.getYear(), 100, 30,new Color(0x00FEED)), c);
 
         c.anchor = GridBagConstraints.PAGE_END;
         c.gridx = 1;
