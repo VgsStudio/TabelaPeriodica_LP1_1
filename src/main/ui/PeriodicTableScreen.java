@@ -21,8 +21,4 @@ public class PeriodicTableScreen extends JFrame {
         setLocation(screenSize.width/2 - getSize().width/2, screenSize.height/2 - getSize().height/2);
         setVisible(true);
     }
-
-    public static void main(String[] args) {
-        new PeriodicTableScreen();
-    }
 }
