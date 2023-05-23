@@ -1,4 +1,4 @@
-package main.ui;
+package main.element;
 public class ElmentTest {
     private String name, family, year, icon;
     private int atomicNumber,protonNum,atomicMass;
