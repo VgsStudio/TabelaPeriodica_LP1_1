@@ -1,4 +1,4 @@
-package element;
+package main.element;
 
 public class Element {
     private int atomicNumber;

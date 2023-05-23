@@ -1,6 +1,6 @@
-package ui;
+package main.ui;
 
-import element.Element;
+import main.element.Element;
 
 import javax.swing.*;
 import java.awt.*;

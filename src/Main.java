@@ -1,5 +1,4 @@
-package tests;
-import ui.PeriodicTableScreen;
+import main.ui.PeriodicTableScreen;
 
 public class Main {
     public static void main(String[] args) {

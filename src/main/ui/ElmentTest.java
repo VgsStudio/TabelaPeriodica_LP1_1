@@ -1,4 +1,4 @@
-package ui;
+package main.ui;
 public class ElmentTest {
     private String name, family, year, icon;
     private int atomicNumber,protonNum,atomicMass;
