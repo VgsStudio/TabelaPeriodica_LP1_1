@@ -12,7 +12,7 @@ public class TestPopUpScreen {
             "H",
             0,
             1,
-            "gases nobres",
+            "FM1",
             "1766"
         );
 

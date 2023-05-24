@@ -63,7 +63,7 @@ public class PopUpScreen extends JFrame implements ActionListener {
         c.anchor= GridBagConstraints.PAGE_START;
         c.gridx = 1;
         c.gridy = 1;
-        panel3.add(createLabel(element.getFamily(), 100, 100,new Color(0x00DEAD)),d);
+        panel3.add(createLabel(element.getFamilyName(), 100, 100,new Color(0x00DEAD)),d);
         atomStuff.add(panel3, c);
         
 

@@ -16,7 +16,7 @@ public class Element {
     private ChemestryFamilyParent family;
     private String year;
 
-    public Element(int atomicNumber, String name, String symbol, int neutronNumber, int atomicMass, String family, String year) throws Exception{
+    public Element(int atomicNumber, String name, String symbol, int neutronNumber, int atomicMass, String family, String year){
         this.atomicNumber = atomicNumber;
         this.name = name;
         this.symbol = symbol;

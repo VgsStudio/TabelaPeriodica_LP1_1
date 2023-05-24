@@ -5,7 +5,7 @@ import java.util.HashMap;
 public class ChemestryFamilyParent {
     private String family;
     private String color;
-    public HashMap<String, String> code_to_family;
+    public HashMap<String, String> code_to_family = new HashMap<String, String>();
     
     public ChemestryFamilyParent(){
         code_to_family.put("FM1", "Metais Alcalinos");
