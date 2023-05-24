@@ -14,6 +14,7 @@ public class TestPopUpScreen {
             1,
             "gases nobres",
             "1766"
+            
         );
 
         PopUpScreen popUpScreen = new PopUpScreen(element);
