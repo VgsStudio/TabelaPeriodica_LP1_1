@@ -1,7 +1,7 @@
 package main.ui.more_Info;
-import main.element.Element;
-
 import javax.swing.*;
+
+import main.entities.Element;
 
 import java.awt.*;
 import java.awt.event.*;

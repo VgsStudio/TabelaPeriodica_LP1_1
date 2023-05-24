@@ -6,4 +6,4 @@ public class TestPeriodicTableScreen {
     public static void main(String[] args) {
         new PeriodicTableScreen();
     }
-}
+} 

@@ -1,6 +1,6 @@
 package tests;
 
-import main.element.Element;
+import main.entities.Element;
 import main.ui.more_Info.PopUpScreen;
 
 
