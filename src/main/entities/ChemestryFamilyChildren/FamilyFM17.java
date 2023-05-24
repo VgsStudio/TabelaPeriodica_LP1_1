@@ -2,9 +2,9 @@ package main.entities.ChemestryFamilyChildren;
 import main.entities.ChemestryFamilyParent;
 
 public class FamilyFM17 extends ChemestryFamilyParent{
-    private String name = "Família dos Halogênios";
-    private String color = "00ddba";
+    static final String NAME = "Halogênios";
+    static final String COLOR = "940094";
     public FamilyFM17(){
-        super();
+        super(NAME, COLOR);
     }
 }

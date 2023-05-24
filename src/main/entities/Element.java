@@ -23,11 +23,7 @@ public class Element {
         this.neutronNumber = neutronNumber; 
         this.atomicMass = atomicMass;
         this.year = year;
-        try{
-            this.setFamily(family);
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
+        this.setFamily(family);
     }
 
 
@@ -74,18 +70,37 @@ public class Element {
         return this.family.getName();
     }
 
-    public void setFamily(String family) throws Exception {
+    public void setFamily(String family){
         switch (family) {
-            case "FML1" -> this.family = new FamilyFM1();
-            case "FML2" -> this.family = new FamilyFM2();
-            case "FML3_12" -> this.family = new FamilyFM3_12();
-            case "FML13" -> this.family = new FamilyFM13();
-            case "FML14" -> this.family = new FamilyFM14();
-            case "FML15" -> this.family = new FamilyFM15();
-            case "FML16" -> this.family = new FamilyFM16();
-            case "FML17" -> this.family = new FamilyFM17();
-            case "FML18" -> this.family = new FamilyFM18();
-            default -> throw new Exception("Invalid Family");
+            case "FM1":
+                this.family = new FamilyFM1();
+                break;
+            case "FM2":
+                this.family = new FamilyFM2();
+                break;
+            case "FM3_12":
+                this.family = new FamilyFM3_12();
+                break;
+            case "FM13":
+                this.family = new FamilyFM13();
+                break;
+            case "FM14":
+                this.family = new FamilyFM14();
+                break;
+            case "FM15":
+                this.family = new FamilyFM15();
+                break;
+            case "FM16":
+                this.family = new FamilyFM16();
+                break;
+            case "FM17":
+                this.family = new FamilyFM17();
+                break;
+            case "FM18":   
+                this.family = new FamilyFM18();
+                break;
+            default:
+                throw new IllegalArgumentException("Família Química não encontrada");
         }
     }
 

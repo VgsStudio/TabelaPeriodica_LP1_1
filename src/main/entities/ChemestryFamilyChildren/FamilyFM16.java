@@ -2,9 +2,9 @@ package main.entities.ChemestryFamilyChildren;
 import main.entities.ChemestryFamilyParent;
 
 public class FamilyFM16 extends ChemestryFamilyParent{
-    private String name = "Família dos Calcogênios";
-    private String color = "";
+    static final String NAME = "Actinídeos";
+    static final String COLOR = "FF00FF";
     public FamilyFM16(){
-        super();
+        super(NAME, COLOR);
     }
 }

@@ -2,9 +2,9 @@ package main.entities.ChemestryFamilyChildren;
 import main.entities.ChemestryFamilyParent;
 
 public class FamilyFM18 extends ChemestryFamilyParent{
-    private String name = "Gases Nobres";
-    private String color = "66aaff";
+    static final String NAME = "Metais Alcalinos Terrosos";
+    static final String COLOR = "FF00FF";
     public FamilyFM18(){
-        super();
+        super(NAME, COLOR);
     }
 }

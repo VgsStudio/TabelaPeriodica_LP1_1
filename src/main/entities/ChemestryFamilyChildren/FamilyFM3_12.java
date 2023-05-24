@@ -2,9 +2,9 @@ package main.entities.ChemestryFamilyChildren;
 import main.entities.ChemestryFamilyParent;
 
 public class FamilyFM3_12 extends ChemestryFamilyParent{
-    private String name = "Metais de Transição";
-    private String color = "";
+    static final String NAME = "Metais de Transição";
+    static final String COLOR = "FF7F00";
     public FamilyFM3_12(){
-        super();
+        super(NAME, COLOR);
     }
 }

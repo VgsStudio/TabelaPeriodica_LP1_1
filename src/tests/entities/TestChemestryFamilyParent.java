@@ -1,15 +1,13 @@
 package tests.entities;
 
-import main.entities.ChemestryFamilyParent;
-
-import java.util.Objects;
+import main.entities.ChemestryFamilyChildren.FamilyFM1;
 
 public class TestChemestryFamilyParent {
         public static void main(String[] args) {
-        System.out.println("TestChemestryFamilyParent.java");
-        ChemestryFamilyParent cfp = new ChemestryFamilyParent();
-        System.out.println(Objects.equals(cfp.getName(), "Metais Alcalinos"));
-        System.out.println(Objects.equals(cfp.getColor(), "Red"));
+            System.out.println("TestChemestryFamilyParent.java");
+            FamilyFM1 cfp = new FamilyFM1();
+            System.out.println(cfp.getName().equals("Metais Alcalinos"));
+            System.out.println(cfp.getColor().equals("#FF0000"));
     }
 
 }
