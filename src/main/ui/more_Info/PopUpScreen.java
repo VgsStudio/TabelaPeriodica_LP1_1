@@ -13,6 +13,7 @@ public class PopUpScreen extends JFrame implements ActionListener {
 
     public PopUpScreen(Element element){
         // Window settings
+        super(element.getName());
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(500,500);
         setVisible(true);
@@ -75,7 +76,7 @@ public class PopUpScreen extends JFrame implements ActionListener {
         c.anchor = GridBagConstraints.LINE_START;
         c.gridx = 0;
         c.gridy = 2;
-        panel4.add(createLabelW("Massa atomica: "+element.getAtomicMass(), 225, 30,Color.decode(element.getColor()),18),d);
+        panel4.add(createLabelW("Massa atomica: "+element.getAtomicMass() +" u", 225, 30,Color.decode(element.getColor()),18),d);
      
  
         c.gridx = 0;
@@ -91,7 +92,7 @@ public class PopUpScreen extends JFrame implements ActionListener {
             public void actionPerformed(ActionEvent a){
                 info.setEditable(true);
                 saveBt.setVisible(true);
-                
+              
             }
         });
 
@@ -124,6 +125,7 @@ public class PopUpScreen extends JFrame implements ActionListener {
         info.setEditable(false);
         info.setLineWrap(true); 
         info.setWrapStyleWord(true); 
+        info.setText("Para adicionar infomações do elemento clique em 'Editar Info' e apague esse texto");
         panel5.add(info);
         atomStuff.add(panel5,c);
       
@@ -159,7 +161,9 @@ public class PopUpScreen extends JFrame implements ActionListener {
     }
     
     public void actionPerformed(ActionEvent e){
-      
+        
+    
+        
     }
     
 }
