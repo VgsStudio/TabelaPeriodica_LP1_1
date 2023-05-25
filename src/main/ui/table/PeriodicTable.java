@@ -1,8 +1,9 @@
 package main.ui.table;
 
-import main.element.Element;
-
 import javax.swing.*;
+
+import main.entities.Element;
+
 import java.awt.*;
 
 public class PeriodicTable extends JPanel {
@@ -11,6 +12,12 @@ public class PeriodicTable extends JPanel {
     ElementButton button;
     ElementButton[][] buttons = new ElementButton[ROWS][COLUMNS];
 
+//    this.atomicNumber = atomicNumber;
+//        this.name = name;
+//        this.symbol = symbol;
+//        this.neutronNumber = neutronNumber;
+//        this.atomicMass = atomicMass;
+//        this.year = year;
 
     Element element = new Element(
             1,
@@ -18,7 +25,7 @@ public class PeriodicTable extends JPanel {
             "H",
             0,
             1,
-            "gases nobres",
+            "FM1",
             "1766"
     );
 

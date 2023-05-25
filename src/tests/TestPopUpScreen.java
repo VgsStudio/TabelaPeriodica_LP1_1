@@ -1,6 +1,6 @@
 package tests;
 
-import main.element.Element;
+import main.entities.Element;
 import main.ui.more_Info.PopUpScreen;
 
 
@@ -12,7 +12,7 @@ public class TestPopUpScreen {
             "H",
             0,
             1,
-            "gases nobres",
+            "FM1",
             "1766"
         );
 

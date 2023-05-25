@@ -1,8 +1,9 @@
 package main.ui.table;
 
-import main.element.Element;
-
 import javax.swing.*;
+
+import main.entities.Element;
+
 import java.awt.*;
 
 public class ElementButton extends JButton {
