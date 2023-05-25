@@ -1,4 +1,4 @@
-package tests;
+package tests.ui;
 
 import main.entities.Element;
 import main.ui.more_Info.PopUpScreen;

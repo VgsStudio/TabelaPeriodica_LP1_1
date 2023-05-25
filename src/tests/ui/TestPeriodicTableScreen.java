@@ -1,4 +1,4 @@
-package tests;
+package tests.ui;
 import main.back.domain.repo.RepositoryInterface;
 import main.back.modules.GetAllElements.GetAllElementsPresenter;
 import main.back.shared.repo.RepositoryMock;
