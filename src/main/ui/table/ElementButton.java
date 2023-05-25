@@ -6,8 +6,6 @@ import main.entities.Element;
 import main.ui.more_Info.PopUpScreen;
 
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class ElementButton extends JButton {
 

@@ -7,10 +7,10 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class PopUpScreen extends JFrame implements ActionListener {
-    private JButton infBt, saveBt; 
+    private JButton infBt, saveBt;
     private JTextField info;
     private JPanel atomStuff , panel1 , panel2 , panel3 , panel4;
-    
+
 
 
     public PopUpScreen(Element element){
@@ -46,18 +46,18 @@ public class PopUpScreen extends JFrame implements ActionListener {
         c.gridy = 0;
         panel2.add(createLabel(element.getSymbol(), 100, 100,new Color(0x359EEE)),d);
         atomStuff.add(panel2, c);
-        
+
         c.anchor = GridBagConstraints.PAGE_START;
         c.gridx = 1;
         c.gridy = 0;
         panel3.add(createLabel(element.getName(), 100, 30, new Color(0x000800)));
         atomStuff.add(panel3, c);
 
-        
+
         c.anchor = GridBagConstraints.FIRST_LINE_END;
         c.gridx = 2;
         c.gridy = 0;
-        panel1.add(createLabel(""+element.getAtomicNumber(),100 ,100,new Color(0x800DBD)),d);
+        panel1.add(createLabel(""+ element.getAtomicNumber(),100 ,100,new Color(0x800DBD)),d);
         atomStuff.add(panel1, c);
 
         c.anchor= GridBagConstraints.PAGE_START;
@@ -65,14 +65,14 @@ public class PopUpScreen extends JFrame implements ActionListener {
         c.gridy = 1;
         panel3.add(createLabel(element.getFamilyName(), 100, 100,new Color(0x00DEAD)),d);
         atomStuff.add(panel3, c);
-        
+
 
         c.anchor = GridBagConstraints.LINE_START;
         c.gridx = 0;
         c.gridy = 2;
-        panel4.add(createLabel(""+element.getAtomicMass(), 100, 30,new Color(0x00FEAD)),d);
+        panel4.add(createLabel(""+ element.getAtomicMass(), 100, 30,new Color(0x00FEAD)),d);
         atomStuff.add(panel4, c);
- 
+
         c.gridx = 0;
         c.gridy = 3;
         atomStuff.add(createLabel(element.getYear(), 100, 30,new Color(0x00FEED)), c);
@@ -82,9 +82,10 @@ public class PopUpScreen extends JFrame implements ActionListener {
         c.gridy = 4;
         atomStuff.add(createLabel("Text Placeholder", 100, 30,new Color(0xFAED00)), c);
 
-        
+
         add(atomStuff);
-        }
+    }
+
     public void actionPerformed(ActionEvent e) {
 
     }
