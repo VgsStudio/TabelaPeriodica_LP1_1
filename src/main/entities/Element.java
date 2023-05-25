@@ -1,33 +1,36 @@
 package main.entities;
 
-import main.entities.ChemestryFamilyChildren.FamilyFM1;
-import main.entities.ChemestryFamilyChildren.FamilyFM13;
-import main.entities.ChemestryFamilyChildren.FamilyFM14;
-import main.entities.ChemestryFamilyChildren.FamilyFM15;
-import main.entities.ChemestryFamilyChildren.FamilyFM16;
-import main.entities.ChemestryFamilyChildren.FamilyFM17;
-import main.entities.ChemestryFamilyChildren.FamilyFM18;
-import main.entities.ChemestryFamilyChildren.FamilyFM2;
-import main.entities.ChemestryFamilyChildren.FamilyFM3_12;
-import main.entities.ChemestryFamilyChildren.FamilyFMACT;
-import main.entities.ChemestryFamilyChildren.FamilyFMLAN;
+import java.util.HashMap;
+
+import main.entities.ChemestryGroupChildren.GroupGPACT;
+import main.entities.ChemestryGroupChildren.GroupGPAEM;
+import main.entities.ChemestryGroupChildren.GroupGPAKM;
+import main.entities.ChemestryGroupChildren.GroupGPHAL;
+import main.entities.ChemestryGroupChildren.GroupGPPTM;
+import main.entities.ChemestryGroupChildren.GroupGPRNM;
+import main.entities.ChemestryGroupChildren.GroupGPTTM;
+import main.entities.ChemestryGroupChildren.GroupGPLAN;
+import main.entities.ChemestryGroupChildren.GroupGPMET;
+import main.entities.ChemestryGroupChildren.GroupGPMTL;
+import main.entities.ChemestryGroupChildren.GroupGPNBG;
 
 public class Element {
     private int atomicNumber, neutronNumber, atomicMass;
     private String name, symbol;
-    private ChemestryFamilyParent family;
+    private ChemestryGroupParent group;
     private String year;
+    private HashMap<String, ChemestryGroupParent> code_to_group = new HashMap<String, ChemestryGroupParent>();
 
-    public Element(int atomicNumber, String name, String symbol, int neutronNumber, int atomicMass, String family, String year){
+    public Element(int atomicNumber, String name, String symbol, int neutronNumber, int atomicMass, String groupCode, String year){
         this.atomicNumber = atomicNumber;
         this.name = name;
         this.symbol = symbol;
         this.neutronNumber = neutronNumber; 
         this.atomicMass = atomicMass;
         this.year = year;
-        this.setFamily(family);
+        this.createCodeToGroup();
+        this.setGroup(groupCode);
     }
-
 
     public int getAtomicNumber() {
         return atomicNumber;
@@ -64,51 +67,32 @@ public class Element {
         this.symbol = symbol;
     }
 
+    private void createCodeToGroup(){
+        this.code_to_group.put("GPAKM", new GroupGPAKM());
+        this.code_to_group.put("GPAEM", new GroupGPAEM());
+        this.code_to_group.put("GPLAN", new GroupGPLAN());
+        this.code_to_group.put("GPACT", new GroupGPACT());
+        this.code_to_group.put("GPTTM", new GroupGPTTM());
+        this.code_to_group.put("GPPTM", new GroupGPPTM());
+        this.code_to_group.put("GPMTL", new GroupGPMTL());
+        this.code_to_group.put("GPRNM", new GroupGPRNM());
+        this.code_to_group.put("GPNBG", new GroupGPNBG());
+        this.code_to_group.put("GPHAL", new GroupGPHAL());
+        this.code_to_group.put("GPMET", new GroupGPMET());
+    }
+
     public String getColor() {
-        return this.family.getColor();
+        return this.group.getColor();
     }
 
-    public String getFamilyName() {
-        return this.family.getName();
+    public String getGroupName() {
+        return this.group.getName();
     }
 
-    public void setFamily(String family){
-        switch (family) {
-            case "FM1":
-                this.family = new FamilyFM1();
-                break;
-            case "FM2":
-                this.family = new FamilyFM2();
-                break;
-            case "FM3_12":
-                this.family = new FamilyFM3_12();
-                break;
-            case "FM13":
-                this.family = new FamilyFM13();
-                break;
-            case "FM14":
-                this.family = new FamilyFM14();
-                break;
-            case "FM15":
-                this.family = new FamilyFM15();
-                break;
-            case "FM16":
-                this.family = new FamilyFM16();
-                break;
-            case "FM17":
-                this.family = new FamilyFM17();
-                break;
-            case "FM18":   
-                this.family = new FamilyFM18();
-                break;
-            case "FMACT":   
-                this.family = new FamilyFMACT();
-                break;
-            case "FMLAN":   
-                this.family = new FamilyFMLAN();
-                break;
-            default:
-                throw new IllegalArgumentException("Família Química não encontrada");
+    public void setGroup(String groupCode){
+        this.group = this.code_to_group.get(groupCode);
+        if(this.group == null){
+            throw new IllegalArgumentException("groupCode inválido");
         }
     }
 
@@ -126,8 +110,8 @@ public class Element {
             "Símbolo: " + this.symbol + "\n" +
             "Número de nêutrons: " + this.neutronNumber + "\n" +
             "Massa atômica: " + this.atomicMass + "\n" +
-            "Família Química: " + this.family.getName() + "\n" +
+            "Grupo Química: " + this.group.getName() + "\n" +
             "Ano de descoberta: " + this.year + "\n" +
-            "Cor: " + this.family.getColor();
+            "Cor: " + this.group.getColor();
     }
 }

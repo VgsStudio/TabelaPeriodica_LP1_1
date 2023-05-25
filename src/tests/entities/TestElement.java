@@ -11,13 +11,13 @@ public class TestElement {
 
     public static void teste1(){
         System.out.println("TestElement - Elemento válido");
-        main.entities.Element element = new main.entities.Element(
+        Element element = new Element(
             1,
             "Hidrogênio",
             "H",
             0,
             1,
-            "FM1",
+            "GPAKM",
             "1766"
         );
         System.out.println(element.getAtomicNumber() == 1);
@@ -26,7 +26,7 @@ public class TestElement {
         System.out.println(element.getYear().equals("1766"));
         System.out.println(element.getNeutronNumber() == 0);
         System.out.println(element.getAtomicMass() == 1);
-        System.out.println(element.getFamilyName().equals("Metais Alcalinos"));
+        System.out.println(element.getGroupName().equals("Metais Alcalinos"));
         System.out.println(element.getColor().equals("#FF0000"));
     }
 
