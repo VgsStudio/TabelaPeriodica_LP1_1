@@ -83,7 +83,7 @@ public class PopUpScreen extends JFrame implements ActionListener {
        
         h.gridy = 1; 
         h.fill = GridBagConstraints.HORIZONTAL;
-        panelTop.add(createLabel(element.getFamilyName(), 300,200,Color.decode(element.getColor()) ,25,"Times New Roman",false),h);
+        panelTop.add(createLabel(element.getGroupName(), 300,200,Color.decode(element.getColor()) ,25,"Times New Roman",false),h);
         
     
 
