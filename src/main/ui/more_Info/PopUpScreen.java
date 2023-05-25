@@ -14,7 +14,7 @@ public class PopUpScreen extends JFrame implements ActionListener {
 
 
     public PopUpScreen(Element element){
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         setSize(500,500);
         setVisible(true);
         this.setResizable(false);
