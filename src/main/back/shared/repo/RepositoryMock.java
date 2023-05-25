@@ -114,7 +114,7 @@ public class RepositoryMock implements RepositoryInterface{
                 new Element(100, "Férmio", "Fm", 198, 257, "GPACT", 1952),
                 new Element(101, "Mendelévio", "Md", 200, 258, "GPACT", 1955),
                 new Element(102, "Nobélio", "No", 202, 259, "GPACT", 1957),
-                new Element(103, "Laurêncio", "Lr", 204, 262, "GPTTM", 1961),
+                new Element(103, "Laurêncio", "Lr", 204, 262, "GPACT", 1961),
                 new Element(104, "Rutherfórdio", "Rf", 206, 267, "GPTTM", 1969),
                 new Element(105, "Dúbnio", "Db", 208, 268, "GPTTM", 1967),
                 new Element(106, "Seabórgio", "Sg", 210, 271, "GPTTM", 1974),
