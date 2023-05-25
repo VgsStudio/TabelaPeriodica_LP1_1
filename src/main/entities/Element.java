@@ -15,13 +15,13 @@ import main.entities.ChemestryGroupChildren.GroupGPMTL;
 import main.entities.ChemestryGroupChildren.GroupGPNBG;
 
 public class Element {
-    private int atomicNumber, neutronNumber, atomicMass;
+    private int atomicNumber, neutronNumber, atomicMass, year;
     private String name, symbol;
     private ChemestryGroupParent group;
-    private String year;
+    private String info;
     private HashMap<String, ChemestryGroupParent> code_to_group = new HashMap<String, ChemestryGroupParent>();
 
-    public Element(int atomicNumber, String name, String symbol, int neutronNumber, int atomicMass, String groupCode, String year){
+    public Element(int atomicNumber, String name, String symbol, int neutronNumber, int atomicMass, String groupCode, int year){
         this.atomicNumber = atomicNumber;
         this.name = name;
         this.symbol = symbol;
@@ -30,6 +30,18 @@ public class Element {
         this.year = year;
         this.createCodeToGroup();
         this.setGroup(groupCode);
+        this.info = "";
+    }
+    public Element(int atomicNumber, String name, String symbol, int neutronNumber, int atomicMass, String groupCode, int year, String info){
+        this.atomicNumber = atomicNumber;
+        this.name = name;
+        this.symbol = symbol;
+        this.neutronNumber = neutronNumber; 
+        this.atomicMass = atomicMass;
+        this.year = year;
+        this.createCodeToGroup();
+        this.setGroup(groupCode);
+        this.info = info;
     }
 
     public int getAtomicNumber() {
@@ -96,10 +108,10 @@ public class Element {
         }
     }
 
-    public String getYear() {
+    public int getYear() {
         return this.year;
     }
-    public void setYear(String year) {
+    public void setYear(int year) {
         this.year = year;
     }
 

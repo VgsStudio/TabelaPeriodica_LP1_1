@@ -18,12 +18,12 @@ public class TestElement {
             0,
             1,
             "GPAKM",
-            "1766"
+            1766
         );
         System.out.println(element.getAtomicNumber() == 1);
         System.out.println(element.getName().equals("Hidrogênio"));
         System.out.println(element.getSymbol().equals("H"));
-        System.out.println(element.getYear().equals("1766"));
+        System.out.println(element.getYear() == 1766);
         System.out.println(element.getNeutronNumber() == 0);
         System.out.println(element.getAtomicMass() == 1);
         System.out.println(element.getGroupName().equals("Metais Alcalinos"));
@@ -40,7 +40,7 @@ public class TestElement {
                 0,
                 1,
                 "Codigo Errado",
-                "1766"
+                1766
             );
             System.out.println("False");
         } catch (Exception e) {
