@@ -1,6 +1,7 @@
 package main.back.modules.GetAllElements;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 import main.back.domain.repo.RepositoryInterface;
 import main.entities.Element;
@@ -12,6 +13,9 @@ public class GetAllElementsUsecase {
     }
 
     public ArrayList<Element> call(){
-        return repository.getAllElements();
+
+        ArrayList<Element> elements = this.repository.getAllElements();
+        Collections.sort(elements, (e1, e2) -> Integer.valueOf(e1.getAtomicNumber()).compareTo(Integer.valueOf(e2.getAtomicNumber())));   
+        return elements;
     }
 }
