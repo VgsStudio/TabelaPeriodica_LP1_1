@@ -15,6 +15,7 @@ public class Element {
         this.atomicMass = atomicMass;
         this.family = family;
         this.year = year;
+        this.neutronNumber = neutronNumber;
 
         switch (family) {
             case "alcalinos" -> this.color = "#ffaa01";
@@ -49,5 +50,8 @@ public class Element {
 
     public String getYear() {
         return year;
+    }
+    public int getNeutronNumber() {
+        return neutronNumber;
     }
 }

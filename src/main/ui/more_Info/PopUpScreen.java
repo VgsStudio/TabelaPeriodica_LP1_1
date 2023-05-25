@@ -2,13 +2,14 @@ package main.ui.more_Info;
 import main.element.Element;
 
 import javax.swing.*;
+import javax.swing.text.*;
 import java.awt.*;
 import java.awt.event.*;
 
 public class PopUpScreen extends JFrame implements ActionListener {
     private JButton infBt, saveBt; 
     private JTextArea info;
-    private JPanel atomStuff , panel1 , panel2 , panel3 , panel4, panel5;
+    private JPanel atomStuff , panelNum , panelSybol , panelGinfo, panelInfo, panelTop;
    
 
     public PopUpScreen(Element element){
@@ -21,68 +22,91 @@ public class PopUpScreen extends JFrame implements ActionListener {
         setLocationRelativeTo(null);
 
         // Declare variables
-        JButton infBt = new JButton("Editar\n Info");
-        JButton saveBt = new JButton("Salvar");
-        JTextArea info = new JTextArea();
-        JPanel atomStuff = new JPanel(new GridBagLayout()),
-        panel1 = new JPanel(new GridBagLayout()), 
-        panel2 = new JPanel(new GridBagLayout()), 
-        panel3 = new JPanel(new GridLayout(0,1)), 
-        panel4 =  new JPanel(new GridLayout(0,1)),
-        panel5 = new JPanel(new FlowLayout());
+        infBt = new JButton("Editar\n Info");
+        saveBt = new JButton("Salvar");
+        info = new JTextArea();
+        atomStuff = new JPanel(new GridBagLayout());
+        panelNum = new JPanel(new GridBagLayout()); 
+        panelSybol = new JPanel(new GridBagLayout());
+        panelGinfo = new JPanel(new GridLayout(0,1));
+        panelInfo = new JPanel(new FlowLayout());
+        panelTop = new JPanel(new GridBagLayout());
 
         // General Panel config
         GridBagConstraints c = new GridBagConstraints();
         GridBagConstraints d = new GridBagConstraints();
-        d.anchor = GridBagConstraints.FIRST_LINE_START;
-        d.ipadx = 50;
-        d.ipady = 50;
+        GridBagConstraints h = new GridBagConstraints();  
+        
         c.fill = GridBagConstraints.NONE;
         c.gridheight = 5;
         c.gridwidth = 3;
-        c.insets = new Insets(1,1,1,1);
         c.weightx = 1;
         c.weighty = 0.1;
+        atomStuff.setBorder(BorderFactory.createLineBorder(new Color (248, 242, 242), 15));
+
+        d.gridheight = 5;
+        d.gridwidth = 3;
+        d.weightx = 1;
+        d.weighty = 1;
+       // d.insets = new Insets(5, 50, 5, 50);
+
+        h.insets = new Insets(5, 50, 5, 50);
+        panelTop.setBackground(new Color(248, 242, 242));
+        
+
+        // Elment name  
+        // LABEL CHAR LIMIT: 15, DO NOT EXCEED!
+        c.anchor = GridBagConstraints.FIRST_LINE_START;
+        panelTop.setPreferredSize(new Dimension(500, 100));
+
+        
+        h.anchor = GridBagConstraints.FIRST_LINE_START;
+        panelTop.add(createLabel(element.getName(), 100, 100,new Color(248, 242, 242) ,40, "Courier New",false),h);
+   
 
         // Symbol config
-        c.anchor = GridBagConstraints.FIRST_LINE_START;
-        c.gridx  = 0;
-        c.gridy = 0;
-        panel2.add(createLabel(element.getSymbol(), 100, 100,Color.decode(element.getColor()),30),d);
-        atomStuff.add(panel2, c);
-        
+
+        panelSybol.setBackground(new Color(248, 242, 242));
+        panelSybol.add(createLabel(element.getSymbol(), 10, 100,new Color(248, 242, 242),40,"Courier New",false),d);
+        panelTop.add(panelSybol);
+
+
         // Atomic number config
-        c.anchor = GridBagConstraints.FIRST_LINE_END;
-        c.gridx = 2;
-        c.gridy = 0;
-        panel1.add(createLabel(""+element.getAtomicNumber(),100 ,100,Color.decode(element.getColor()),30),d);
-        atomStuff.add(panel1, c);
-
-        // Elment name and family config
-        // LABEL CHAR LIMIT: 15, DO NOT EXCEED!
-        c.anchor = GridBagConstraints.PAGE_START;
-        c.gridx = 1;
-        c.gridy = 0;
-        panel3.add(createLabel(element.getName(), 185, 75,Color.decode(element.getColor()) ,18),d);
-        atomStuff.add(panel3, c);
-
-        c.anchor= GridBagConstraints.PAGE_START;
-        c.gridx = 1;
-        c.gridy = 1;
-        panel3.add(createLabel(element.getFamily(), 185,75,Color.decode(element.getColor()) ,18),d);
-        atomStuff.add(panel3, c);
+       
+        panelNum.setBackground(new Color(248, 242, 242));
+        panelNum.add(createLabel(""+element.getAtomicNumber(),100 ,100,new Color(248, 242, 242),40,"Times New Roman",false),h);
+        panelTop.add(panelNum);
+       
         
+        
+        // Family config
+       
+        h.gridy = 1; 
+        h.fill = GridBagConstraints.HORIZONTAL;
+        panelTop.add(createLabel(element.getFamily(), 300,200,Color.decode(element.getColor()) ,25,"Times New Roman",false),h);
+        
+    
+
+        c.gridx = 0;
+        c.gridy = 0;
+        atomStuff.add(panelTop, c);
+
         // General info config
         c.anchor = GridBagConstraints.LINE_START;
         c.gridx = 0;
         c.gridy = 2;
-        panel4.add(createLabelW("Massa atomica: "+element.getAtomicMass() +" u", 225, 30,Color.decode(element.getColor()),18),d);
+        panelGinfo.add(createLabelW("Massa atomica: "+element.getAtomicMass() +" u", 225, 30,new Color(248, 242, 242),18,"Times New Roman"),d);
      
  
         c.gridx = 0;
         c.gridy = 3;
-        panel4.add(createLabelW("Ano de descoberta: "+ element.getYear(), 225, 30,Color.decode(element.getColor()),18), d);
-        atomStuff.add(panel4, c);
+        panelGinfo.add(createLabelW("Ano de descoberta: "+ element.getYear(), 225, 30,new Color(248, 242, 242),18,"Times New Roman"), d);
+        atomStuff.add(panelGinfo, c);
+
+        c.gridx = 0;
+        c.gridy = 4;
+        panelGinfo.add(createLabelW("Numero de Neutrons: "+ element.getNeutronNumber(), 225, 30,new Color(248, 242, 242),18,"Times New Roman"), d);
+        atomStuff.add(panelGinfo, c);
         
         // Buttons config
         c.anchor = GridBagConstraints.LAST_LINE_START;
@@ -113,50 +137,69 @@ public class PopUpScreen extends JFrame implements ActionListener {
         
 
         // New info user update config
-        c.anchor = GridBagConstraints.PAGE_END;
-        c.fill = GridBagConstraints.HORIZONTAL;
         
         
-        panel5.setPreferredSize(new Dimension(300, 175));
+        c.anchor = GridBagConstraints.EAST;
+        c.gridx = 0;
+        c.gridwidth = 1;
         
-        info.setPreferredSize(new Dimension(300, 145));
+        
+        info.setPreferredSize(new Dimension(200, 200));
         info.setFont(new Font("Arial",0,15));
         info.setBackground(Color.white);
         info.setEditable(false);
         info.setLineWrap(true); 
         info.setWrapStyleWord(true); 
-        info.setText("Para adicionar infomações do elemento clique em 'Editar Info' e apague esse texto");
-        panel5.add(info);
-        atomStuff.add(panel5,c);
+        info.setDocument(new PlainDocument(){
+            final int MAX_LENGTH = 150;
+          public void insertString(int offs, String str, AttributeSet a) throws BadLocationException {
+                if (str == null || info.getText().length() >= MAX_LENGTH) {
+                    return;
+                }
+                super.insertString(offs, str, a);
+        }});
+        if(info.getText().equals("")) {
+            info.setText("Para adicionar infomações do elemento clique em 'Editar Info' e apague esse texto");
+        }
+        panelInfo.add(info);
+  
+        atomStuff.add(panelInfo,c);
       
         
-        panel5.setBackground(Color.decode(element.getColor()));
-        atomStuff.setBackground(Color.decode(element.getColor()));
+        panelInfo.setBackground(new Color(248, 242, 242));
+        atomStuff.setBackground(new Color(248, 242, 242));
+
 
         add(atomStuff);
         }
     
     // Label creator
-    public JLabel createLabel(String txt, int width, int height, Color color, int size) {
+    public JLabel createLabel(String txt, int width, int height, Color color, int size, String font, boolean border) {
         JLabel label = new JLabel(txt);
         label.setPreferredSize(new Dimension(width, height));
         label.setOpaque(true);
-        label.setFont(new Font("Arial", Font.BOLD,size));
+        label.setFont(new Font(font, Font.BOLD,size));
         label.setBackground(color);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setHorizontalAlignment(JLabel.CENTER);
+        if(border){
+            label.setBorder(BorderFactory.createLineBorder(Color.BLACK, 2));
+        }else{
+            label.setBorder(BorderFactory.createLineBorder(Color.BLACK, 0));
+        }
         
         return label;
     }
-    public JLabel createLabelW(String txt, int width, int height, Color color, int size) {
+    public JLabel createLabelW(String txt, int width, int height, Color color, int size, String font) {
         JLabel label = new JLabel(txt);
         label.setPreferredSize(new Dimension(width, height));
         label.setOpaque(true);
-        label.setFont(new Font("Arial", Font.BOLD,size));
+        label.setFont(new Font(font, Font.BOLD,size));
         label.setBackground(color);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setHorizontalAlignment(JLabel.LEFT);
-        
+        label.setBorder(BorderFactory.createLineBorder(new Color(248, 242, 242), 2));
+
         return label;
     }
     
