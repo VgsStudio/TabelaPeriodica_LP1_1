@@ -1,10 +1,10 @@
 package main.ui.more_Info;
-import main.element.Element;
 
 import javax.swing.*;
 import javax.swing.text.*;
 import java.awt.*;
 import java.awt.event.*;
+import main.entities.Element;
 
 public class PopUpScreen extends JFrame implements ActionListener {
     private JButton infBt, saveBt; 
@@ -15,7 +15,7 @@ public class PopUpScreen extends JFrame implements ActionListener {
     public PopUpScreen(Element element){
         // Window settings
         super(element.getName());
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
+        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         setSize(500,500);
         setVisible(true);
         this.setResizable(false);
@@ -83,7 +83,7 @@ public class PopUpScreen extends JFrame implements ActionListener {
        
         h.gridy = 1; 
         h.fill = GridBagConstraints.HORIZONTAL;
-        panelTop.add(createLabel(element.getFamily(), 300,200,Color.decode(element.getColor()) ,25,"Times New Roman",false),h);
+        panelTop.add(createLabel(element.getFamilyName(), 300,200,Color.decode(element.getColor()) ,25,"Times New Roman",false),h);
         
     
 
