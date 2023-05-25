@@ -9,6 +9,8 @@ import main.entities.ChemestryFamilyChildren.FamilyFM17;
 import main.entities.ChemestryFamilyChildren.FamilyFM18;
 import main.entities.ChemestryFamilyChildren.FamilyFM2;
 import main.entities.ChemestryFamilyChildren.FamilyFM3_12;
+import main.entities.ChemestryFamilyChildren.FamilyFMACT;
+import main.entities.ChemestryFamilyChildren.FamilyFMLAN;
 
 public class Element {
     private int atomicNumber, neutronNumber, atomicMass;
@@ -99,6 +101,12 @@ public class Element {
             case "FM18":   
                 this.family = new FamilyFM18();
                 break;
+            case "FMACT":   
+                this.family = new FamilyFMACT();
+                break;
+            case "FMLAN":   
+                this.family = new FamilyFMLAN();
+                break;
             default:
                 throw new IllegalArgumentException("Família Química não encontrada");
         }
@@ -109,5 +117,17 @@ public class Element {
     }
     public void setYear(String year) {
         this.year = year;
+    }
+
+    public String toString(){
+        return 
+            "Elemento: " + this.name + "\n" +
+            "Número atômico: " + this.atomicNumber + "\n" +
+            "Símbolo: " + this.symbol + "\n" +
+            "Número de nêutrons: " + this.neutronNumber + "\n" +
+            "Massa atômica: " + this.atomicMass + "\n" +
+            "Família Química: " + this.family.getName() + "\n" +
+            "Ano de descoberta: " + this.year + "\n" +
+            "Cor: " + this.family.getColor();
     }
 }
