@@ -2,8 +2,6 @@ package tests.back.shared.repo;
 
 import java.util.ArrayList;
 
-import com.mysql.cj.x.protobuf.MysqlxDatatypes.Array;
-
 import main.back.shared.repo.RepositoryMock;
 import main.entities.Element;
 
