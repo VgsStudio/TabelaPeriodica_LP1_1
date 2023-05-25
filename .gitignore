@@ -34,3 +34,4 @@ bin/
 *.ipr
 /.idea/
 /src/META-INF/
+*.class
