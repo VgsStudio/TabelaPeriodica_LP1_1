@@ -7,7 +7,7 @@ import main.ui.table.PeriodicTableScreen;
 public class Main {
 
     public static void main(String[] args) {
-        RepositoryInterface repo = new RepositoryMock();
+        RepositoryInterface repo = new RepositoryMock(); // TODO change to RepositoryMySQL
         GetAllElementsPresenter presenter = new GetAllElementsPresenter(repo);
         PeriodicTable periodicTable = new PeriodicTable(presenter.call());
         new PeriodicTableScreen(periodicTable);
