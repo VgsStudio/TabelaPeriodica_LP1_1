@@ -3,6 +3,7 @@ package main.ui.table;
 import javax.swing.*;
 
 import main.entities.Element;
+import main.ui.more_Info.PopUpScreen;
 
 import java.awt.*;
 
@@ -54,6 +55,8 @@ public class ElementButton extends JButton {
         setBackground(Color.decode(element.getColor()));
 
         setToolTipText(element.getName());
+        addActionListener(e -> new PopUpScreen(element));
+
         setVisible(true);
     }
 

@@ -1,10 +1,13 @@
 package main.ui.table;
-
+import main.entities.Element;
 import javax.swing.*;
 import java.awt.*;
+import java.util.ArrayList;
 
 public class PeriodicTableScreen extends JFrame {
-    public PeriodicTableScreen() {
+    private ArrayList<Element> elements;
+
+    public PeriodicTableScreen(PeriodicTable periodicTable) {
         super("Periodic Table");
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
@@ -14,7 +17,7 @@ public class PeriodicTableScreen extends JFrame {
         label.setFont(label.getFont().deriveFont(30.0f));
         add(label);
 
-        add(new PeriodicTable());
+        add(periodicTable);
 
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
