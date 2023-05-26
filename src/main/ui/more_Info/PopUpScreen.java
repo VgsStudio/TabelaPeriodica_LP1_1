@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.event.*;
 import main.entities.Element;
 
-public class PopUpScreen extends JFrame implements ActionListener {
+public class PopUpScreen extends JPanel implements ActionListener {
     private JButton infBt, saveBt; 
     private JTextArea info;
     private JPanel atomStuff , panelNum , panelSybol , panelGinfo, panelInfo, panelTop;
@@ -14,12 +14,7 @@ public class PopUpScreen extends JFrame implements ActionListener {
 
     public PopUpScreen(Element element){
         // Window settings
-        super(element.getName());
-        setDefaultCloseOperation(DISPOSE_ON_CLOSE);
-        setSize(500,500);
-        setVisible(true);
-        this.setResizable(false);
-        setLocationRelativeTo(null);
+        super();
 
         // Declare variables
         infBt = new JButton("Editar\n Info");

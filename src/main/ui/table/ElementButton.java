@@ -3,7 +3,7 @@ package main.ui.table;
 import javax.swing.*;
 
 import main.entities.Element;
-import main.ui.more_Info.PopUpScreen;
+import main.ui.more_Info.MoreInfoPopUpFactory;
 
 import java.awt.*;
 
@@ -11,17 +11,20 @@ public class ElementButton extends JButton {
 
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     private Element element;
+    private MoreInfoPopUpFactory moreInfoPopUpFactory;
 
-    ElementButton() {
+    ElementButton(MoreInfoPopUpFactory moreInfoPopUpFactory) {
         super();
+        this.moreInfoPopUpFactory = moreInfoPopUpFactory;
         Dimension dimension = new Dimension(screenSize.width/30, screenSize.width/30);
         setPreferredSize(dimension);
         setMargin(new Insets(1, 1, 1, 1));
         setVisible(false);
     }
 
-    ElementButton(Element element){
+    ElementButton(Element element, MoreInfoPopUpFactory moreInfoPopUpFactory){
         super();
+        this.moreInfoPopUpFactory = moreInfoPopUpFactory;
         Dimension dimension = new Dimension(screenSize.width/30, screenSize.width/30);
         setPreferredSize(dimension);
         setMargin(new Insets(1, 1, 1, 1));
@@ -55,7 +58,7 @@ public class ElementButton extends JButton {
         setBackground(Color.decode(element.getColor()));
 
         setToolTipText(element.getName());
-        addActionListener(e -> new PopUpScreen(element));
+        addActionListener(e -> moreInfoPopUpFactory.createPopUp(element));
 
         setVisible(true);
     }

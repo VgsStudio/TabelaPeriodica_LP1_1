@@ -1,5 +1,7 @@
 package main.ui.table;
 import main.entities.Element;
+import main.ui.more_Info.MoreInfoPopUpFactory;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
