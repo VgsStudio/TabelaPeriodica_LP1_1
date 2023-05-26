@@ -2,8 +2,8 @@ package main.ui.table;
 
 import javax.swing.*;
 
-import main.back.modules.GetAllElements.GetAllElementsPresenter;
 import main.entities.Element;
+import main.ui.more_Info.MoreInfoPopUpFactory;
 
 import java.awt.*;
 import java.util.ArrayList;
@@ -15,14 +15,14 @@ public class PeriodicTable extends JPanel {
     ElementButton[][] buttons = new ElementButton[ROWS][COLUMNS];
 
 
-    public PeriodicTable(ArrayList<Element> elements) {
+    public PeriodicTable(ArrayList<Element> elements, MoreInfoPopUpFactory moreInfoPopUpFactory) {
         super();
          setLayout(new GridLayout(ROWS, COLUMNS));
          int i = 0;
 
          for (int row = 0; row < 10; row++) {
              for (int col = 0; col < 18; col++) {
-                 button = new ElementButton();
+                 button = new ElementButton(moreInfoPopUpFactory);
                  add(button);
                  buttons[row][col] = button;
                 if((row == 0 && (col > 0 && col < 17)) || ((row == 1 || row == 2 ) && (col > 1 && col < 12)) || (row==7) || ((row == 8 || row == 9) && col < 3 )) {
