@@ -1,11 +1,13 @@
 package tests.entities;
 
+import main.back.shared.errors.EntityError;
 import main.entities.Element;
 
 public class TestElement {
     public static void main(String[] args) {
         teste1();
         teste2();
+        test_atomicNumberNegative();
         
     }
 
@@ -45,6 +47,24 @@ public class TestElement {
             System.out.println("False");
         } catch (Exception e) {
             System.out.println("True");
+        }
+    }
+
+    public static void test_atomicNumberNegative(){
+        System.out.println("TestElement - Nome de família não existe");
+        try {
+            Element element = new Element(
+                -1,
+                "Hidrogênio",
+                "H",
+                0,
+                1,
+                "GPAKM",
+                1766
+            );
+            System.out.println("False");
+        } catch (EntityError e) {
+            System.out.println(e.getMessage().equals("Erro no atributo atomicNumber: O número atômico deve ser maior que 0"));
         }
     }
 }

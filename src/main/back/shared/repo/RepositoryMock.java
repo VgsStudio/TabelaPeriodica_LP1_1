@@ -134,8 +134,31 @@ public class RepositoryMock implements RepositoryInterface{
         );
     }
     
+
+
     @Override
     public ArrayList<Element> getAllElements(){
         return elements;
+    }
+
+    @Override
+    public Element getElement(int atomicNumber){
+        for (Element element : elements) {
+            if(element.getAtomicNumber() == atomicNumber){
+                return element;
+            }
+        }
+        return null;
+    }
+
+    @Override
+    public Element updateElement(int atomicNumber, String info){
+        for (Element element : elements) {
+            if(element.getAtomicNumber() == atomicNumber){
+                element.setInfo(info);
+                return element;
+            }
+        }
+        return null;
     }
 }
