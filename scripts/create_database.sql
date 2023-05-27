@@ -1,4 +1,10 @@
+CREATE USER 'tabelaperiodica'@'localhost' IDENTIFIED BY 'tabelaperiodica';
+
+GRANT ALL PRIVILEGES ON * . * TO 'tabelaperiodica'@'localhost';
+
+FLUSH PRIVILEGES;
 SHOW DATABASES;
+
 CREATE DATABASE PERIODIC_TABLE;
 USE PERIODIC_TABLE;
 CREATE TABLE ELEMENTS
@@ -10,7 +16,7 @@ neutronNumber SMALLINT UNSIGNED NOT NULL,
 atomicMass FLOAT NOT NULL,
 groupCode VARCHAR(10) NOT NULL,
 year INT UNSIGNED NOT NULL,
-info VARCHAR(100),
+info VARCHAR(200),
 PRIMARY KEY (atomicNumber)
 ) ENGINE = InnoDB;
 

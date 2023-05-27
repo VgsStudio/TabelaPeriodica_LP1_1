@@ -3,8 +3,8 @@ package main.back.shared.connector;
 import java.sql.*;
 
 public class ConnectorFactory {
-    private static final String USER =   "root";
-    private static final String PASS =   "teste123";
+    private static final String USER =   "tabelaperiodica";
+    private static final String PASS =   "tabelaperiodica";
 
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";
 
