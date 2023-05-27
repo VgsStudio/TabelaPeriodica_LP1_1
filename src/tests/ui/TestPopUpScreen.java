@@ -4,6 +4,8 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
+import main.back.modules.UpdateInfo.UpdateInfoPresenter;
+import main.back.shared.repo.RepositoryMock;
 import main.entities.Element;
 import main.ui.more_Info.PopUpScreen;
 
@@ -26,7 +28,8 @@ public class TestPopUpScreen {
         a.setResizable(false);
         a.setLocationRelativeTo(null);
 
-        PopUpScreen popUpScreen = new PopUpScreen(element);
+        UpdateInfoPresenter updateInfoPresenter = new UpdateInfoPresenter(new RepositoryMock());
+        PopUpScreen popUpScreen = new PopUpScreen(element, updateInfoPresenter);
         a.add(popUpScreen);
         a.pack();
         a.setVisible(true);

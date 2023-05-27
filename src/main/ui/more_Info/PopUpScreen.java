@@ -5,15 +5,20 @@ import javax.swing.*;
 import javax.swing.text.*;
 import java.awt.*;
 import java.awt.event.*;
+
+import main.back.modules.UpdateInfo.UpdateInfoPresenter;
 import main.entities.Element;
 
-public class PopUpScreen extends JPanel implements ActionListener {
+public class PopUpScreen extends JPanel {
     private JButton infBt, saveBt; 
     private JTextArea info;
     private JPanel  panelNum , panelSybol , panelGinfo, panelInfo, panelTop;
+
+    UpdateInfoPresenter updateInfoPresenter;
    
 
-    public PopUpScreen(Element element){
+    public PopUpScreen(Element element, UpdateInfoPresenter updateInfoPresenter){
+        this.updateInfoPresenter = updateInfoPresenter;
         // Window settings
         setLayout(new GridBagLayout());
         setBorder(BorderFactory.createLineBorder(new Color (248, 242, 242), 15));
@@ -122,15 +127,15 @@ public class PopUpScreen extends JPanel implements ActionListener {
         
         add(saveBt,c);
         saveBt.setVisible(false);
-        saveBt.addActionListener(this);
         saveBt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e){
                info.setEditable(false);
                saveBt.setVisible(false);         
-               infBt.setVisible(true);      
+               infBt.setVisible(true);
+
+               updateInfoPresenter.call(element.getAtomicNumber(), info.getText());
             }
         });
-        saveBt.addActionListener(this);
 
         
 
@@ -163,19 +168,7 @@ public class PopUpScreen extends JPanel implements ActionListener {
         scroll.setViewportView(info);
         scroll.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
         panelInfo.add(scroll,BorderLayout.CENTER);
-       
-        
-        
-        
-       
-       
-      
-        
-       
-    
 
-
-      
         addComponentListener(new ComponentAdapter() {
             @Override
             public void componentResized(ComponentEvent e) {
@@ -215,11 +208,4 @@ public class PopUpScreen extends JPanel implements ActionListener {
 
         return label;
     }
-    
-    public void actionPerformed(ActionEvent e){
-      
-    
-        
-    }
-    
 }

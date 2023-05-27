@@ -1,5 +1,6 @@
 package main.ui.more_Info;
 
+import main.back.modules.UpdateInfo.UpdateInfoPresenter;
 import main.entities.Element;
 
 import javax.swing.*;
@@ -7,6 +8,11 @@ import java.awt.*;
 
 public class MoreInfoPopUpFactory {
     private JFrame popUp;
+    private UpdateInfoPresenter updateInfoPresenter;
+
+    public MoreInfoPopUpFactory(UpdateInfoPresenter updateInfoPresenter) {
+        this.updateInfoPresenter = updateInfoPresenter;
+    }
 
     public void createPopUp(Element element)
     {
@@ -23,7 +29,7 @@ public class MoreInfoPopUpFactory {
             popUp.setVisible(true);
             popUp.setResizable(false);
             popUp.setLocationRelativeTo(null);
-            popUp.add(new PopUpScreen(element));
+            popUp.add(new PopUpScreen(element,  updateInfoPresenter));
             popUp.pack();
         }
         else {
@@ -34,7 +40,7 @@ public class MoreInfoPopUpFactory {
     private void changeElement(Element element) {
         popUp.setTitle(element.getName());
         popUp.getContentPane().removeAll();
-        popUp.getContentPane().add(new PopUpScreen(element));
+        popUp.getContentPane().add(new PopUpScreen(element, updateInfoPresenter ));
         popUp.revalidate();
         popUp.repaint();
         popUp.toFront();

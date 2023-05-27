@@ -12,7 +12,7 @@ public class TestPeriodicTableScreen {
         RepositoryInterface repo = new RepositoryMock();
         GetAllElementsPresenter presenter = new GetAllElementsPresenter(repo);
         UpdateInfoPresenter updateInfoPresenter = new UpdateInfoPresenter(repo);
-        MoreInfoPopUpFactory moreInfoPopUpFactory = new MoreInfoPopUpFactory();
+        MoreInfoPopUpFactory moreInfoPopUpFactory = new MoreInfoPopUpFactory(updateInfoPresenter);
         PeriodicTable periodicTable = new PeriodicTable(presenter.call(), moreInfoPopUpFactory);
         new PeriodicTableScreen(periodicTable);
     }

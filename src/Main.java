@@ -12,7 +12,7 @@ public class Main {
         RepositoryInterface repo = new RepositoryMock(); // TODO change to RepositoryMySQL
         GetAllElementsPresenter getAllElementsPresenter = new GetAllElementsPresenter(repo);
         UpdateInfoPresenter updateInfoPresenter = new UpdateInfoPresenter(repo);
-        MoreInfoPopUpFactory moreInfoPopUpFactory = new MoreInfoPopUpFactory();
+        MoreInfoPopUpFactory moreInfoPopUpFactory = new MoreInfoPopUpFactory(updateInfoPresenter);
         PeriodicTable periodicTable = new PeriodicTable(getAllElementsPresenter.call(), moreInfoPopUpFactory);
         new PeriodicTableScreen(periodicTable);
     }
