@@ -152,8 +152,11 @@ public class PopUpScreen extends JPanel implements ActionListener {
                 }
                 super.insertString(offs, str, a);
         }});
-        if(info.getText().equals("")) {
+        if(element.getInfo().equals("")) {
             info.setText("Para adicionar infomações do elemento clique em 'Editar Info' e apague esse texto");
+        }
+        else{
+            info.setText(element.getInfo());
         }
         
         JScrollPane scroll = new JScrollPane();
