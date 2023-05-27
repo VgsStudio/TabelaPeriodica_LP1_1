@@ -2,6 +2,7 @@ package main.entities;
 
 import java.util.HashMap;
 
+import main.back.shared.errors.EntityError;
 import main.entities.ChemestryGroupChildren.GroupGPACT;
 import main.entities.ChemestryGroupChildren.GroupGPAEM;
 import main.entities.ChemestryGroupChildren.GroupGPAKM;
@@ -22,7 +23,11 @@ public class Element {
     private HashMap<String, ChemestryGroupParent> code_to_group = new HashMap<String, ChemestryGroupParent>();
 
     public Element(int atomicNumber, String name, String symbol, int neutronNumber, int atomicMass, String groupCode, int year){
-        this.atomicNumber = atomicNumber;
+        if(validateAtomicNumber(atomicNumber)){
+            this.atomicNumber = atomicNumber;
+        }else{
+            throw new EntityError("atomicNumber", "O número atômico deve ser maior que 0");
+        }
         this.name = name;
         this.symbol = symbol;
         this.neutronNumber = neutronNumber; 
@@ -43,6 +48,8 @@ public class Element {
         this.setGroup(groupCode);
         this.info = info;
     }
+
+    // Getters and setters
 
     public int getAtomicNumber() {
         return atomicNumber;
@@ -115,6 +122,21 @@ public class Element {
         this.year = year;
     }
 
+    public String getInfo(){
+        return this.info;
+    }
+
+    public void setInfo(String info){
+        this.info = info;
+    }
+
+    // Validations
+    public static boolean validateAtomicNumber(int atomicNumber){
+        return atomicNumber > 0;
+    }
+
+    // Method toString
+    
     public String toString(){
         return 
             "Elemento: " + this.name + "\n" +
@@ -124,6 +146,7 @@ public class Element {
             "Massa atômica: " + this.atomicMass + "\n" +
             "Grupo Química: " + this.group.getName() + "\n" +
             "Ano de descoberta: " + this.year + "\n" +
-            "Cor: " + this.group.getColor();
+            "Cor: " + this.group.getColor() + "\n" +
+            "Info: " + this.info;
     }
 }

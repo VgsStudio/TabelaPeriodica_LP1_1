@@ -9,6 +9,10 @@ public class TestRepositoryMock {
     public static void main(String[] args) {
         teste1();
         test_getAllElements();
+        test_getElement();
+        test_getElementNotFound();
+        test_updateInfo();
+        test_updateInfoNotFound();
     }
 
     public static void teste1() {
@@ -28,6 +32,35 @@ public class TestRepositoryMock {
         ArrayList<Element> elements = repositoryMock.getAllElements();
         System.out.println(elements.size() == 118);
 
+    }
+
+    public static void test_getElement(){
+        System.out.println("Teste getElement");
+        RepositoryMock repositoryMock = new RepositoryMock();
+        Element element = repositoryMock.getElement(1);
+        System.out.println(element.getName().equals("Hidrogênio"));
+    }
+
+    public static void test_getElementNotFound(){
+        System.out.println("Teste getElement not found");
+        RepositoryMock repositoryMock = new RepositoryMock();
+        Element element = repositoryMock.getElement(-1);
+        System.out.println(element == null);
+    }
+
+    public static void test_updateInfo(){
+        System.out.println("Teste updateInfo");
+        RepositoryMock repositoryMock = new RepositoryMock();
+        Element element = repositoryMock.updateElement(1, "info");
+        System.out.println(element.getInfo().equals("info"));
+        System.out.println(element.getName().equals("Hidrogênio"));
+    }
+
+    public static void test_updateInfoNotFound(){
+        System.out.println("Teste updateInfo not found");
+        RepositoryMock repositoryMock = new RepositoryMock();
+        Element element = repositoryMock.updateElement(-1, "info");
+        System.out.println(element == null);
     }
 
 }

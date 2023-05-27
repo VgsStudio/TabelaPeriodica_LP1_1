@@ -2,6 +2,7 @@ package main.ui.table;
 
 import javax.swing.*;
 
+import main.back.modules.UpdateInfo.UpdateInfoPresenter;
 import main.entities.Element;
 import main.ui.more_Info.MoreInfoPopUpFactory;
 
@@ -13,11 +14,13 @@ public class PeriodicTable extends JPanel {
     int COLUMNS = 18;
     ElementButton button;
     ElementButton[][] buttons = new ElementButton[ROWS][COLUMNS];
+    private UpdateInfoPresenter updateInfoPresenter;
 
 
-    public PeriodicTable(ArrayList<Element> elements, MoreInfoPopUpFactory moreInfoPopUpFactory) {
+    public PeriodicTable(ArrayList<Element> elements, UpdateInfoPresenter updateInfoPresenter, MoreInfoPopUpFactory moreInfoPopUpFactory) {
         super();
-         setLayout(new GridLayout(ROWS, COLUMNS));
+        this.updateInfoPresenter = updateInfoPresenter;
+        setLayout(new GridLayout(ROWS, COLUMNS));
          int i = 0;
 
          for (int row = 0; row < 10; row++) {

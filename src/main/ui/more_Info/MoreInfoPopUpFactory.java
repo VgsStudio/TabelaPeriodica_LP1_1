@@ -3,6 +3,7 @@ package main.ui.more_Info;
 import main.entities.Element;
 
 import javax.swing.*;
+import java.awt.*;
 
 public class MoreInfoPopUpFactory {
     private JFrame popUp;
@@ -18,7 +19,7 @@ public class MoreInfoPopUpFactory {
                     popUp = null;
                 }
             });
-            popUp.setSize(500,500);
+            popUp.setPreferredSize(new Dimension(500, 300));
             popUp.setVisible(true);
             popUp.setResizable(false);
             popUp.setLocationRelativeTo(null);
