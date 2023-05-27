@@ -22,7 +22,7 @@ public class PeriodicTable extends JPanel {
 
          for (int row = 0; row < 10; row++) {
              for (int col = 0; col < 18; col++) {
-                 button = new ElementButton(moreInfoPopUpFactory);
+                 button = new ElementButton(moreInfoPopUpFactory, this);
                  add(button);
                  buttons[row][col] = button;
                 if((row == 0 && (col > 0 && col < 17)) || ((row == 1 || row == 2 ) && (col > 1 && col < 12)) || (row==7) || ((row == 8 || row == 9) && col < 3 )) {
