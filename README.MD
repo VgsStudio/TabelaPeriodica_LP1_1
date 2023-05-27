@@ -9,9 +9,6 @@ Para executar o projeto, é necessário ter instalado o Java 19 e o MySql.
 ## Como criar o banco de dados
 Para criar o banco de dados, basta executar o script `create_db.sql` no MySql.
 
-## Realese
-Para baixar o realese, basta clicar [aqui](https://github.com/VgsStudio/TabelaPeriodica_LP1_1/releases/tag/realese)
-
 ## Contribuidores
 - [André Lucas](https://github.com/dhezinho11/)
 - [João Branco](https://github.com/JoaoVitorBranco/)
