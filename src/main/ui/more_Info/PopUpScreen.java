@@ -115,9 +115,11 @@ public class PopUpScreen extends JPanel {
         add(infBt,c);
         infBt.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent a){
-                info.setEditable(true); 
+                info.setEditable(true);
+                info.requestFocusInWindow();
                 saveBt.setVisible(true);
                 infBt.setVisible(false);
+                info.setText(element.getInfo());
               
             }
         });
@@ -134,6 +136,7 @@ public class PopUpScreen extends JPanel {
                infBt.setVisible(true);
 
                updateInfoPresenter.call(element.getAtomicNumber(), info.getText());
+               element.setInfo(info.getText());
             }
         });
 
@@ -157,8 +160,15 @@ public class PopUpScreen extends JPanel {
                 }
                 super.insertString(offs, str, a);
         }});
-        if(element.getInfo().equals("")) {
-            info.setText("Para adicionar infomações do elemento clique em 'Editar Info' e apague esse texto");
+
+        String text = element.getInfo();
+
+        if (text == null){
+            text = "";
+        }
+
+        if(text.isEmpty()){
+            info.setText("Para adicionar infomações do elemento clique em 'Editar Info'");
         }
         else{
             info.setText(element.getInfo());
