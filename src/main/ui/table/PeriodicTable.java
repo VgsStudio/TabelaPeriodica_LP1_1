@@ -14,12 +14,9 @@ public class PeriodicTable extends JPanel {
     int COLUMNS = 18;
     ElementButton button;
     ElementButton[][] buttons = new ElementButton[ROWS][COLUMNS];
-    private UpdateInfoPresenter updateInfoPresenter;
 
-
-    public PeriodicTable(ArrayList<Element> elements, UpdateInfoPresenter updateInfoPresenter, MoreInfoPopUpFactory moreInfoPopUpFactory) {
+    public PeriodicTable(ArrayList<Element> elements, MoreInfoPopUpFactory moreInfoPopUpFactory) {
         super();
-        this.updateInfoPresenter = updateInfoPresenter;
         setLayout(new GridLayout(ROWS, COLUMNS));
          int i = 0;
 

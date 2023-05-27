@@ -13,7 +13,7 @@ public class TestPeriodicTableScreen {
         GetAllElementsPresenter presenter = new GetAllElementsPresenter(repo);
         UpdateInfoPresenter updateInfoPresenter = new UpdateInfoPresenter(repo);
         MoreInfoPopUpFactory moreInfoPopUpFactory = new MoreInfoPopUpFactory();
-        PeriodicTable periodicTable = new PeriodicTable(presenter.call(), updateInfoPresenter, moreInfoPopUpFactory);
+        PeriodicTable periodicTable = new PeriodicTable(presenter.call(), moreInfoPopUpFactory);
         new PeriodicTableScreen(periodicTable);
     }
 } 

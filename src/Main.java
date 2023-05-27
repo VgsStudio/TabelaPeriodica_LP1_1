@@ -13,7 +13,7 @@ public class Main {
         GetAllElementsPresenter getAllElementsPresenter = new GetAllElementsPresenter(repo);
         UpdateInfoPresenter updateInfoPresenter = new UpdateInfoPresenter(repo);
         MoreInfoPopUpFactory moreInfoPopUpFactory = new MoreInfoPopUpFactory();
-        PeriodicTable periodicTable = new PeriodicTable(getAllElementsPresenter.call(), updateInfoPresenter, moreInfoPopUpFactory);
+        PeriodicTable periodicTable = new PeriodicTable(getAllElementsPresenter.call(), moreInfoPopUpFactory);
         new PeriodicTableScreen(periodicTable);
     }
 }
