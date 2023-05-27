@@ -10,11 +10,11 @@ public class PeriodicTableScreen extends JFrame {
     private ArrayList<Element> elements;
 
     public PeriodicTableScreen(PeriodicTable periodicTable) {
-        super("Periodic Table");
+        super("Tabela Periódica");
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
-        JLabel label = new JLabel("Tabela Periódica");
+        JLabel label = new JLabel("Tabela Periódica Interativa");
         label.setAlignmentX(CENTER_ALIGNMENT);
         label.setFont(label.getFont().deriveFont(30.0f));
         add(label);
