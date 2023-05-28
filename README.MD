@@ -14,3 +14,4 @@ Para criar o banco de dados, basta executar o script `create_db.sql` no MySql.
 - [João Branco](https://github.com/JoaoVitorBranco/)
 - [Felipe Peixoto](https://github.com/comunalti/)
 - [Lucas Negri](https://github.com/luckmigz/)
+- [Vitor Soller](https://github.com/VgsStudio/)
