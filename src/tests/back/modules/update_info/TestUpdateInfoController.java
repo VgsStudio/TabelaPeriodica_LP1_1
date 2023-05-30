@@ -1,7 +1,7 @@
-package tests.back.modules.UpdateInfo;
+package tests.back.modules.update_info;
 
-import main.back.modules.UpdateInfo.UpdateInfoController;
-import main.back.modules.UpdateInfo.UpdateInfoUsecase;
+import main.back.modules.update_info.UpdateInfoController;
+import main.back.modules.update_info.UpdateInfoUsecase;
 import main.back.shared.repo.RepositoryMock;
 import main.entities.Element;
 

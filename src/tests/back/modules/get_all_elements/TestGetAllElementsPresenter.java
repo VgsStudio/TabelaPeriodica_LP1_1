@@ -1,7 +1,7 @@
-package tests.back.modules.GetAllElements;
+package tests.back.modules.get_all_elements;
 
 import main.back.domain.repo.RepositoryInterface;
-import main.back.modules.GetAllElements.GetAllElementsPresenter;
+import main.back.modules.get_all_elements.GetAllElementsPresenter;
 import main.back.shared.repo.RepositoryMock;
 
 public class TestGetAllElementsPresenter {

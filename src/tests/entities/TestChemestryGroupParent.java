@@ -1,23 +1,23 @@
 package tests.entities;
 
-import main.entities.ChemestryGroupChildren.GroupGPAKM;
-import main.entities.ChemestryGroupChildren.GroupGPRNM;
-import main.entities.ChemestryGroupChildren.GroupGPTTM;
+import main.entities.chemistry_group.ChemistryGroupGPAKM;
+import main.entities.chemistry_group.ChemistryGroupGPRNM;
+import main.entities.chemistry_group.ChemistryGroupGPTTM;
 
 public class TestChemestryGroupParent {
         public static void main(String[] args) {
             System.out.println("TestChemestryFamilyParent.java");
-            GroupGPAKM cfp = new GroupGPAKM();
-            System.out.println(cfp.getName().equals(GroupGPAKM.NAME));
-            System.out.println(cfp.getColor().equals("#"+GroupGPAKM.COLOR));
+            ChemistryGroupGPAKM cfp = new ChemistryGroupGPAKM();
+            System.out.println(cfp.getName().equals(ChemistryGroupGPAKM.NAME));
+            System.out.println(cfp.getColor().equals("#"+ ChemistryGroupGPAKM.COLOR));
             
-            GroupGPRNM cfp2 = new GroupGPRNM();
-            System.out.println(cfp2.getName().equals(GroupGPRNM.NAME));
-            System.out.println(cfp2.getColor().equals("#"+GroupGPRNM.COLOR));
+            ChemistryGroupGPRNM cfp2 = new ChemistryGroupGPRNM();
+            System.out.println(cfp2.getName().equals(ChemistryGroupGPRNM.NAME));
+            System.out.println(cfp2.getColor().equals("#"+ ChemistryGroupGPRNM.COLOR));
 
-            GroupGPTTM cfp3 = new GroupGPTTM();
-            System.out.println(cfp3.getName().equals(GroupGPTTM.NAME));
-            System.out.println(cfp3.getColor().equals("#"+GroupGPTTM.COLOR));
+            ChemistryGroupGPTTM cfp3 = new ChemistryGroupGPTTM();
+            System.out.println(cfp3.getName().equals(ChemistryGroupGPTTM.NAME));
+            System.out.println(cfp3.getColor().equals("#"+ ChemistryGroupGPTTM.COLOR));
             
     }
 

@@ -2,7 +2,6 @@ package main.ui.table;
 
 import javax.swing.*;
 
-import main.back.modules.UpdateInfo.UpdateInfoPresenter;
 import main.entities.Element;
 import main.ui.more_Info.MoreInfoPopUpFactory;
 

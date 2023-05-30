@@ -1,4 +1,4 @@
-package main.back.modules.GetAllElements;
+package main.back.modules.get_all_elements;
 
 import java.util.ArrayList;
 import java.util.Collections;

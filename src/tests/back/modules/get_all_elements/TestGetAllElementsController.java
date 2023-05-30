@@ -1,7 +1,7 @@
-package tests.back.modules.GetAllElements;
+package tests.back.modules.get_all_elements;
 
-import main.back.modules.GetAllElements.GetAllElementsController;
-import main.back.modules.GetAllElements.GetAllElementsUsecase;
+import main.back.modules.get_all_elements.GetAllElementsController;
+import main.back.modules.get_all_elements.GetAllElementsUsecase;
 import main.back.shared.repo.RepositoryMock;
 
 public class TestGetAllElementsController {

@@ -1,6 +1,6 @@
 package main.ui.more_Info;
 
-import main.back.modules.UpdateInfo.UpdateInfoPresenter;
+import main.back.modules.update_info.UpdateInfoPresenter;
 import main.entities.Element;
 
 import javax.swing.*;

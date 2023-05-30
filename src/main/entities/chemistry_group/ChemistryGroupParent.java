@@ -1,10 +1,10 @@
-package main.entities;
+package main.entities.chemistry_group;
 
-public class ChemestryGroupParent {
+public class ChemistryGroupParent {
     private String name;
     private String color;
     
-    public ChemestryGroupParent(String name, String color){
+    public ChemistryGroupParent(String name, String color){
         this.name = name;
         this.color = color;
     }

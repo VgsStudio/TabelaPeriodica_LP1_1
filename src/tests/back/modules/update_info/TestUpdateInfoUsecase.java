@@ -1,7 +1,7 @@
-package tests.back.modules.UpdateInfo;
+package tests.back.modules.update_info;
 
 
-import main.back.modules.UpdateInfo.UpdateInfoUsecase;
+import main.back.modules.update_info.UpdateInfoUsecase;
 import main.back.shared.errors.EntityError;
 import main.back.shared.errors.NotFound;
 import main.back.shared.repo.RepositoryMock;

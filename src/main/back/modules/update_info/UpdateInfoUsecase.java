@@ -1,4 +1,4 @@
-package main.back.modules.UpdateInfo;
+package main.back.modules.update_info;
 
 
 import main.back.domain.repo.RepositoryInterface;

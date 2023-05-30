@@ -1,7 +1,6 @@
 import main.back.domain.repo.RepositoryInterface;
-import main.back.modules.GetAllElements.GetAllElementsPresenter;
-import main.back.modules.UpdateInfo.UpdateInfoPresenter;
-import main.back.shared.repo.RepositoryMock;
+import main.back.modules.get_all_elements.GetAllElementsPresenter;
+import main.back.modules.update_info.UpdateInfoPresenter;
 import main.back.shared.repo.RepositoryMySQL;
 import main.ui.more_Info.MoreInfoPopUpFactory;
 import main.ui.table.PeriodicTable;

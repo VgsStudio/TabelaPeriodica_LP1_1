@@ -1,9 +1,8 @@
-package tests.back.modules.UpdateInfo;
+package tests.back.modules.update_info;
 
 import main.back.domain.repo.RepositoryInterface;
-import main.back.modules.UpdateInfo.UpdateInfoPresenter;
+import main.back.modules.update_info.UpdateInfoPresenter;
 import main.back.shared.repo.RepositoryMock;
-import main.back.shared.repo.RepositoryMySQL;
 
 public class TestUpdateInfoPresenter {
     public static void main(String[] args) {

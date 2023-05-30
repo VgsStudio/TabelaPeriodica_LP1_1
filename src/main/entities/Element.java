@@ -3,24 +3,25 @@ package main.entities;
 import java.util.HashMap;
 
 import main.back.shared.errors.EntityError;
-import main.entities.ChemestryGroupChildren.GroupGPACT;
-import main.entities.ChemestryGroupChildren.GroupGPAEM;
-import main.entities.ChemestryGroupChildren.GroupGPAKM;
-import main.entities.ChemestryGroupChildren.GroupGPHAL;
-import main.entities.ChemestryGroupChildren.GroupGPPTM;
-import main.entities.ChemestryGroupChildren.GroupGPRNM;
-import main.entities.ChemestryGroupChildren.GroupGPTTM;
-import main.entities.ChemestryGroupChildren.GroupGPLAN;
-import main.entities.ChemestryGroupChildren.GroupGPMET;
-import main.entities.ChemestryGroupChildren.GroupGPMTL;
-import main.entities.ChemestryGroupChildren.GroupGPNBG;
+import main.entities.chemistry_group.ChemistryGroupGPACT;
+import main.entities.chemistry_group.ChemistryGroupGPAEM;
+import main.entities.chemistry_group.ChemistryGroupGPAKM;
+import main.entities.chemistry_group.ChemistryGroupGPHAL;
+import main.entities.chemistry_group.ChemistryGroupGPPTM;
+import main.entities.chemistry_group.ChemistryGroupGPRNM;
+import main.entities.chemistry_group.ChemistryGroupGPTTM;
+import main.entities.chemistry_group.ChemistryGroupGPLAN;
+import main.entities.chemistry_group.ChemistryGroupGPMET;
+import main.entities.chemistry_group.ChemistryGroupGPMTL;
+import main.entities.chemistry_group.ChemistryGroupGPNBG;
+import main.entities.chemistry_group.ChemistryGroupParent;
 
 public class Element {
     private int atomicNumber, neutronNumber, atomicMass, year;
     private String name, symbol;
-    private ChemestryGroupParent group;
+    private ChemistryGroupParent group;
     private String info;
-    private HashMap<String, ChemestryGroupParent> code_to_group = new HashMap<String, ChemestryGroupParent>();
+    private HashMap<String, ChemistryGroupParent> code_to_group = new HashMap<String, ChemistryGroupParent>();
 
     public Element(int atomicNumber, String name, String symbol, int neutronNumber, int atomicMass, String groupCode, int year){
         if(validateAtomicNumber(atomicNumber)){
@@ -87,17 +88,17 @@ public class Element {
     }
 
     private void createCodeToGroup(){
-        this.code_to_group.put("GPAKM", new GroupGPAKM());
-        this.code_to_group.put("GPAEM", new GroupGPAEM());
-        this.code_to_group.put("GPLAN", new GroupGPLAN());
-        this.code_to_group.put("GPACT", new GroupGPACT());
-        this.code_to_group.put("GPTTM", new GroupGPTTM());
-        this.code_to_group.put("GPPTM", new GroupGPPTM());
-        this.code_to_group.put("GPMTL", new GroupGPMTL());
-        this.code_to_group.put("GPRNM", new GroupGPRNM());
-        this.code_to_group.put("GPNBG", new GroupGPNBG());
-        this.code_to_group.put("GPHAL", new GroupGPHAL());
-        this.code_to_group.put("GPMET", new GroupGPMET());
+        this.code_to_group.put("GPAKM", new ChemistryGroupGPAKM());
+        this.code_to_group.put("GPAEM", new ChemistryGroupGPAEM());
+        this.code_to_group.put("GPLAN", new ChemistryGroupGPLAN());
+        this.code_to_group.put("GPACT", new ChemistryGroupGPACT());
+        this.code_to_group.put("GPTTM", new ChemistryGroupGPTTM());
+        this.code_to_group.put("GPPTM", new ChemistryGroupGPPTM());
+        this.code_to_group.put("GPMTL", new ChemistryGroupGPMTL());
+        this.code_to_group.put("GPRNM", new ChemistryGroupGPRNM());
+        this.code_to_group.put("GPNBG", new ChemistryGroupGPNBG());
+        this.code_to_group.put("GPHAL", new ChemistryGroupGPHAL());
+        this.code_to_group.put("GPMET", new ChemistryGroupGPMET());
     }
 
     public String getColor() {

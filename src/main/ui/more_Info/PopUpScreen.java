@@ -6,7 +6,7 @@ import javax.swing.text.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import main.back.modules.UpdateInfo.UpdateInfoPresenter;
+import main.back.modules.update_info.UpdateInfoPresenter;
 import main.entities.Element;
 
 public class PopUpScreen extends JPanel {

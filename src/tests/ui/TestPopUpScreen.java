@@ -4,7 +4,7 @@ import java.awt.Dimension;
 
 import javax.swing.JFrame;
 
-import main.back.modules.UpdateInfo.UpdateInfoPresenter;
+import main.back.modules.update_info.UpdateInfoPresenter;
 import main.back.shared.repo.RepositoryMock;
 import main.entities.Element;
 import main.ui.more_Info.PopUpScreen;
