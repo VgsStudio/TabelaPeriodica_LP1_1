@@ -10,7 +10,7 @@ public class PeriodicTableScreen extends JFrame {
     private ArrayList<Element> elements;
 
     public PeriodicTableScreen(PeriodicTable periodicTable) {
-        super("Tabela Periódica");
+        super("Tabela Periódica Interativa");
 
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         setLayout(new BoxLayout(getContentPane(), BoxLayout.Y_AXIS));
