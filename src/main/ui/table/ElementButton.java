@@ -45,49 +45,53 @@ public class ElementButton extends JButton {
     }
 
     private void onMouseEntered(PeriodicTable periodicTable) {
+        periodicTable.setVisible(false);
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
         for (int row = 0; row < periodicTable.ROWS; row++) {
             for (int col = 0; col < periodicTable.COLUMNS; col++) {
                 ElementButton butttonAux = periodicTable.buttons[row][col];
-                setSelectedButtonState(butttonAux);
+                butttonAux.setSelectedButtonState(element);
 
             }
         }
+        periodicTable.setVisible(true);
     }
 
-    private void setSelectedButtonState(ElementButton butttonAux) {
-        Element elementAux = butttonAux.getElement();
+    private void setSelectedButtonState(Element element) {
+        Element elementAux = this.getElement();
 
         if (elementAux == null) {
             return;
         }
         if (!Objects.equals(elementAux.getGroupName(), element.getGroupName())) {
-            butttonAux.setBackground(
+            this.setBackground(
                     new Color(
-                            Math.max(butttonAux.getBackground().getRed() - 50, 0),
-                            Math.max(butttonAux.getBackground().getGreen() - 50, 0),
-                            Math.max(butttonAux.getBackground().getBlue() - 50, 0)
+                            Math.max(this.getBackground().getRed() - 50, 0),
+                            Math.max(this.getBackground().getGreen() - 50, 0),
+                            Math.max(this.getBackground().getBlue() - 50, 0)
                     )
             );
         }
     }
 
     private void onMouseExited(PeriodicTable periodicTable) {
+        periodicTable.setVisible(false);
         for (int row = 0; row < periodicTable.ROWS; row++) {
             for (int col = 0; col < periodicTable.COLUMNS; col++) {
                 ElementButton butttonAux = periodicTable.buttons[row][col];
-                setOriginalButtonState(butttonAux);
+                butttonAux.setOriginalButtonState();
             }
         }
         setBorder(BorderFactory.createLineBorder(Color.GRAY));
+        periodicTable.setVisible(true);
     }
 
-    private static void setOriginalButtonState(ElementButton butttonAux) {
-        if (butttonAux.getElement() == null) {
+    private void setOriginalButtonState() {
+        if (this.getElement() == null) {
             return;
         }
-        butttonAux.setBackground(
-                Color.decode(butttonAux.getElement().getColor())
+        this.setBackground(
+                Color.decode(this.getElement().getColor())
         );
     }
 
