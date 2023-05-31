@@ -9,6 +9,7 @@ import java.awt.*;
 public class MoreInfoPopUpFactory {
     private JFrame popUp;
     private UpdateInfoPresenter updateInfoPresenter;
+    Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
 
     public MoreInfoPopUpFactory(UpdateInfoPresenter updateInfoPresenter) {
         this.updateInfoPresenter = updateInfoPresenter;
@@ -26,11 +27,12 @@ public class MoreInfoPopUpFactory {
                 }
             });
             popUp.setPreferredSize(new Dimension(500, 300));
-            popUp.setVisible(true);
             popUp.setResizable(false);
-            popUp.setLocationRelativeTo(null);
             popUp.add(new PopUpScreen(element,  updateInfoPresenter));
+            popUp.setAlwaysOnTop(true);
             popUp.pack();
+            popUp.setLocation(screenSize.width/2 - popUp.getSize().width/2, screenSize.height/2 - popUp.getSize().height/2);
+            popUp.setVisible(true);
         }
         else {
             changeElement(element);
