@@ -13,6 +13,7 @@ public class ElementButton extends JButton {
     Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
     private Element element = null;
     private MoreInfoPopUpFactory moreInfoPopUpFactory;
+    private static String selectedGroup = null;
 
     ElementButton(MoreInfoPopUpFactory moreInfoPopUpFactory, PeriodicTable periodicTable) {
         super();
@@ -29,9 +30,22 @@ public class ElementButton extends JButton {
                     public void mouseExited(java.awt.event.MouseEvent evt) {
                         onMouseExited(periodicTable);
                     }
+
+                    public void mouseClicked(java.awt.event.MouseEvent evt) {
+                        onMouseClicked(periodicTable);
+                    }
+
+                    public void mousePressed(java.awt.event.MouseEvent evt) {
+                        onMouseClicked(periodicTable);
+                    }
                 }
         );
         setVisible(false);
+    }
+
+    private void onMouseClicked(PeriodicTable periodicTable) {
+        moreInfoPopUpFactory.createPopUp(element);
+        HighLightSingleton.getInstance().setSelectedButton(this);
     }
 
     ElementButton(Element element, MoreInfoPopUpFactory moreInfoPopUpFactory) {
@@ -47,6 +61,7 @@ public class ElementButton extends JButton {
     private void onMouseEntered(PeriodicTable periodicTable) {
         periodicTable.setVisible(false);
         setBorder(BorderFactory.createLineBorder(Color.BLACK));
+        selectedGroup = element.getGroupName();
         for (int row = 0; row < periodicTable.ROWS; row++) {
             for (int col = 0; col < periodicTable.COLUMNS; col++) {
                 ElementButton butttonAux = periodicTable.buttons[row][col];
@@ -63,6 +78,11 @@ public class ElementButton extends JButton {
         if (elementAux == null) {
             return;
         }
+
+        if (HighLightSingleton.getInstance().getSelectedButton() == this) {
+            return;
+        }
+
         if (!Objects.equals(elementAux.getGroupName(), element.getGroupName())) {
             this.setBackground(
                     new Color(
@@ -76,6 +96,7 @@ public class ElementButton extends JButton {
 
     private void onMouseExited(PeriodicTable periodicTable) {
         periodicTable.setVisible(false);
+        selectedGroup = null;
         for (int row = 0; row < periodicTable.ROWS; row++) {
             for (int col = 0; col < periodicTable.COLUMNS; col++) {
                 ElementButton butttonAux = periodicTable.buttons[row][col];
@@ -88,6 +109,10 @@ public class ElementButton extends JButton {
 
     private void setOriginalButtonState() {
         if (this.getElement() == null) {
+            return;
+        }
+
+        if (HighLightSingleton.getInstance().getSelectedButton() == this) {
             return;
         }
         this.setBackground(
@@ -122,7 +147,6 @@ public class ElementButton extends JButton {
         setBackground(Color.decode(element.getColor()));
 
         setToolTipText(element.getName());
-        addActionListener(e -> moreInfoPopUpFactory.createPopUp(element));
 
         setVisible(true);
     }
@@ -132,4 +156,22 @@ public class ElementButton extends JButton {
         return element;
     }
 
+    public void unHighLight() {
+        this.setBackground(Color.decode(getElement().getColor()));
+
+        if (HighLightSingleton.getInstance().getSelectedButton() != null && !Objects.equals(selectedGroup, element.getGroupName())) {
+            this.setBackground(
+                    new Color(
+                            Math.max(this.getBackground().getRed() - 50, 0),
+                            Math.max(this.getBackground().getGreen() - 50, 0),
+                            Math.max(this.getBackground().getBlue() - 50, 0)
+                    )
+            );
+        }
+
+    }
+
+    public void highLight() {
+        this.setBackground(Color.decode(getElement().getColor()).brighter());
+    }
 }

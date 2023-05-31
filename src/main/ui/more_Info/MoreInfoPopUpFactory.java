@@ -2,6 +2,8 @@ package main.ui.more_Info;
 
 import main.back.modules.update_info.UpdateInfoPresenter;
 import main.entities.Element;
+import main.ui.table.ElementButton;
+import main.ui.table.HighLightSingleton;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,6 +26,7 @@ public class MoreInfoPopUpFactory {
                 @Override
                 public void windowClosing(java.awt.event.WindowEvent windowEvent) {
                     popUp = null;
+                    HighLightSingleton.getInstance().setSelectedButton(null);
                 }
             });
             popUp.setPreferredSize(new Dimension(500, 300));
